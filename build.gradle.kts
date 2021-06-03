@@ -22,7 +22,7 @@ buildscript {
         this["gRecyclerviewVersion"] = "1.1.0"
         this["gAppCompatVersion"] = "1.1.0"
         this["gMaterialDesignVersion"] = "1.1.0"
-        this["gShizukuPreferenceVersion"] = "4.2.0"
+        this["gShizukuPreferenceVersion"] = "4.0.0"
         this["gMultiprocessPreferenceVersion"] = "1.0.0"
     }
     repositories {

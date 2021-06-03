@@ -28,6 +28,10 @@ val gMaterialDesignVersion: String by rootExtra
 val gShizukuPreferenceVersion: String by rootExtra
 val gMultiprocessPreferenceVersion: String by rootExtra
 
+//def keystorePropertiesFile = rootProject.file("keystore.properties");
+//def keystoreProperties = new Properties();
+//keystoreProperties.load( new FileInputStream(keystorePropertiesFile) );
+
 android {
     compileSdkVersion(gCompileSdkVersion)
     buildToolsVersion(gBuildToolsVersion)
@@ -76,9 +80,11 @@ android {
         signingConfigs {
             maybeCreate("release").apply {
                 storeFile = rootProject.file(Objects.requireNonNull(properties.getProperty("storeFile")))
-                storePassword = System.getenv("KEYSTORE_PWD")
+                storePassword = Objects.requireNonNull(properties.getProperty("storePassword"))
+		               /* System.getenv("KEYSTORE_PWD") */
                 keyAlias = Objects.requireNonNull(properties.getProperty("keyAlias"))
-                keyPassword = System.getenv("KEY_PWD")
+                keyPassword =  Objects.requireNonNull(properties.getProperty("keyPassword"))
+				/* System.getenv("KEY_PWD") */
             }
         }
         buildTypes {
