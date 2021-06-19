@@ -1,9 +1,16 @@
 package com.github.kr328.clash
 
+
+import android.Manifest
 import android.app.Activity
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.github.kr328.clash.fragment.ProfileEditFragment
 import com.github.kr328.clash.remote.withProfile
 import com.github.kr328.clash.service.model.Profile
@@ -11,8 +18,11 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_profile_edit.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import java.io.*
+
 
 class ProfileEditActivity : BaseActivity() {
+
     private var editor: ProfileEditFragment? = null
     private var processing = false
         set(value) {
@@ -27,8 +37,13 @@ class ProfileEditActivity : BaseActivity() {
             }
         }
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_profile_edit)
         setSupportActionBar(toolbar)
 

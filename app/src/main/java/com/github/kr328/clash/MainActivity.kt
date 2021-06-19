@@ -66,6 +66,10 @@ class MainActivity : BaseActivity() {
             startActivity(SupportActivity::class.intent)
         }
 
+        wireguard.setOnClickListener {
+            startActivity(WireGuardActivity::class.intent)
+        }
+
         about.setOnClickListener {
             showAboutDialog()
         }

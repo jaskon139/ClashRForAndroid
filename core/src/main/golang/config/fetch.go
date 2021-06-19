@@ -19,6 +19,8 @@ import (
 
 var ApplicationVersion = "Unknown"
 
+var WireGuardValue = "nouser"
+
 const defaultFileMode = 0600
 
 var client = &http.Client{

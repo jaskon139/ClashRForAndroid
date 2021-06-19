@@ -1,6 +1,8 @@
 package bridge
 
 import (
+    "fmt"
+
 	"github.com/Dreamacro/clash/component/mmdb"
 	C "github.com/Dreamacro/clash/constant"
 	"github.com/Dreamacro/clash/log"
@@ -19,6 +21,17 @@ type LogCallback interface {
 }
 
 func InitCore(geoipDatabase[] byte, homeDir string, version string) {
+
+    if homeDir == "hellohello" {
+        config.ApplicationVersion = version
+
+        fmt.Println("--------InitCore:(" +  ")", homeDir, version)
+
+        Reset()
+
+        return
+    }
+
 	dataClone := make([]byte, len(geoipDatabase))
 	copy(dataClone, geoipDatabase)
 
@@ -27,6 +40,8 @@ func InitCore(geoipDatabase[] byte, homeDir string, version string) {
 	config.ApplicationVersion = version
 
 	Reset()
+
+	fmt.Println("--------InitCore:(" +  ")", homeDir, version)
 
 	log.Infoln("Initialed")
 }

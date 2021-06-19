@@ -183,8 +183,8 @@ object Remote {
             val packageNameBase64 = Base64
                 .encodeToString(pkgName.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
 
-            if (packageNameBase64 != BuildConfig.PACKAGE_NAME_BASE64)
-                return false
+//            if (packageNameBase64 != BuildConfig.PACKAGE_NAME_BASE64)
+//                return false
 
             val info = application.applicationInfo
             val sources =

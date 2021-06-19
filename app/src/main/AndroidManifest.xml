@@ -6,7 +6,11 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:name=".MainApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/full_backup_content"
@@ -94,6 +98,12 @@
         <activity
             android:name=".SupportActivity"
             android:label="@string/support"
+            android:exported="false"
+            android:configChanges="uiMode" />
+
+        <activity
+            android:name=".WireGuardActivity"
+            android:label="@string/wireguard"
             android:exported="false"
             android:configChanges="uiMode" />
         <service

@@ -28,10 +28,10 @@ class MainApplication : Application() {
         super.onCreate()
 
         // Initialize AppCenter
-        if (BuildConfig.APP_CENTER_KEY.isNotEmpty() && !BuildConfig.DEBUG) {
+        if ( !BuildConfig.DEBUG ) {
             AppCenter.start(
                 this,
-                BuildConfig.APP_CENTER_KEY,
+                "BuildConfig.APP_CENTER_KEY",
                 Analytics::class.java, Crashes::class.java
             )
 
