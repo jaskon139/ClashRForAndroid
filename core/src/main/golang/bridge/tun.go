@@ -18,6 +18,14 @@ var callback TunCallback
 func init() {
 	dialer.DialerHook = onNewDialer
 	dialer.ListenConfigHook = onNewListenConfig
+	dialer.Callback = onCallBack
+}
+
+func onCallBack(fd int) error {
+	if cb := callback; cb != nil {
+		cb.OnCreateSocket(int(fd))
+	}
+	return nil
 }
 
 func onNewDialer(dialer *net.Dialer) error {
