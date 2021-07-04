@@ -218,4 +218,5 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope by MainScope()
 
         return resources.getText(info.labelRes)
     }
+
 }

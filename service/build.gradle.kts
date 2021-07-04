@@ -69,5 +69,5 @@ dependencies {
     implementation("androidx.room:room-runtime:$gRoomVersion")
     implementation("androidx.room:room-ktx:$gRoomVersion")
     implementation("androidx.core:core-ktx:$gAndroidKtxVersion")
-    implementation("rikka.preference:multiprocesspreference:$gMultiprocessPreferenceVersion")
+    implementation("dev.rikka.rikkax.preference:multiprocess:$gMultiprocessPreferenceVersion")
 }

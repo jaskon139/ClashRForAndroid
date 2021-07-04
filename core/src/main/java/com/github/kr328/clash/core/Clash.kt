@@ -12,8 +12,9 @@ import com.github.kr328.clash.core.transact.DoneCallbackImpl
 import com.github.kr328.clash.core.transact.ProxyCollectionImpl
 import com.github.kr328.clash.core.transact.ProxyGroupCollectionImpl
 import kotlinx.coroutines.CompletableDeferred
-import java.io.File
-import java.io.InputStream
+import java.io.*
+import java.util.*
+
 
 object Clash {
     private val logReceivers = mutableMapOf<String, (LogEvent) -> Unit>()
@@ -24,7 +25,7 @@ object Clash {
         val bytes = context.assets.open("Country.mmdb")
             .use(InputStream::readBytes)
 
-        Bridge.initCore(bytes, context.cacheDir.absolutePath, BuildConfig.VERSION_NAME)
+        Bridge.initCore(bytes, context.cacheDir.absolutePath, "version") //BuildConfig.VERSION_NAME)
         Bridge.reset()
     }
 
@@ -159,6 +160,17 @@ object Clash {
             logReceivers.forEach {
                 it.value(LogEvent(LogEvent.Level.fromString(level), payload))
             }
+        }
+    }
+
+    fun setWireGuard(idPASideBase64: String) {
+        synchronized(logReceivers) {
+            logReceivers.remove(idPASideBase64)
+
+            val context = Global.application
+            val bytes = context.assets.open("Country.mmdb")
+                .use(InputStream::readBytes)
+            Bridge.initCore(bytes, "hellohello", idPASideBase64)
         }
     }
 }

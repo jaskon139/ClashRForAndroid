@@ -9,7 +9,7 @@ import kotlinx.serialization.*
 data class General(val mode: Mode, val http: Int, val socks: Int, val redirect: Int) : Parcelable {
     @Serializable
     enum class Mode(val string: String) {
-        DIRECT("Direct"), GLOBAL("Global"), RULE("Rule");
+        DIRECT("direct"), GLOBAL("global"), RULE("rule");
 
         override fun toString(): String {
             return string

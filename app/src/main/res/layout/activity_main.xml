@@ -165,6 +165,33 @@
                 android:text="@string/support" />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/wireguard"
+            android:padding="15dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_feedback" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/wireguard" />
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/about"
             android:padding="15dp"

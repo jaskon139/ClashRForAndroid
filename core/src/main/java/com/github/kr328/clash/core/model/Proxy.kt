@@ -13,7 +13,7 @@ data class Proxy(
         REJECT("Reject", false),
 
         SHADOWSOCKS("Shadowsocks", false),
-	SHADOWSOCKSR("ShadowsocksR", false),
+	    SHADOWSOCKSR("ShadowsocksR", false),
         SNELL("Snell", false),
         SOCKS5("Socks5", false),
         HTTP("Http", false),
@@ -38,7 +38,7 @@ data class Proxy(
                     DIRECT.text -> DIRECT
                     REJECT.text -> REJECT
                     SHADOWSOCKS.text -> SHADOWSOCKS
-		    SHADOWSOCKSR.text -> SHADOWSOCKSR
+		            SHADOWSOCKSR.text -> SHADOWSOCKSR
                     SNELL.text -> SNELL
                     SOCKS5.text -> SOCKS5
                     HTTP.text -> HTTP
